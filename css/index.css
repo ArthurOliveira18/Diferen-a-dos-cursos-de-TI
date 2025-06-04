@@ -5,8 +5,13 @@
 
 header{
     background-color: #1f2937;
-    color: #cec7c7;
-
+    color: #ffffff;
     padding-bottom: 2.5rem;
     border: 1px solid #374151;
+}
+
+
+a{
+    text-decoration: none;
+    color: #ffffff;
 }
