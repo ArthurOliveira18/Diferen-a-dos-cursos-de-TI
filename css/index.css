@@ -1,66 +1,530 @@
-* {
+/* Reset básico e Estilos Globais */
+body, h1, h2, h3, p, div, section, header, footer, nav, button, a, span, img, svg {
     margin: 0;
     padding: 0;
-    font-family: "Roboto", sans-serif;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
+
 body {
-    overflow-x: hidden;
-    background-color: #111827;
+    background-color: #111827; /* bg-gray-900 */
+    color: #f3f4f6; /* text-gray-100 (aproximado para texto geral) */
 }
-header {
-    background-color: #1f2937;
+
+.main-container {
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 1280px; /* max-w-7xl (para carrossel), ajuste conforme necessário */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;  /* px-4 */
+    padding-right: 1rem; /* px-4 */
+}
+
+/* Header */
+.header {
+    background-color: #1f2937; /* bg-gray-800 */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-lg */
+    border-bottom: 1px solid #374151; /* border-gray-700 */
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1.5rem;    /* py-6 */
+    padding-bottom: 1.5rem; /* py-6 */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo svg.icon-blue {
+    stroke: #60a5fa; /* text-blue-400 */
+    margin-right: 0.5rem; /* space-x-2 */
+}
+
+.logo-text {
+    font-size: 1.5rem; /* text-2xl */
+    font-weight: bold;
     color: #ffffff;
+}
+
+.navigation {
+    display: none; /* hidden por padrão */
+}
+
+@media (min-width: 768px) { /* md:flex */
+    .navigation {
+        display: flex;
+    }
+}
+
+.nav-link {
+    color: #d1d5db; /* text-gray-300 */
+    text-decoration: none;
+    margin-left: 1.5rem; /* space-x-6 */
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #60a5fa; /* hover:text-blue-400 */
+}
+
+/* Hero Section */
+.hero-section {
+    padding-top: 4rem;    /* py-16 */
+    padding-bottom: 4rem; /* py-16 */
+    text-align: center;
+}
+
+.hero-title {
+    font-size: 3rem;    /* text-5xl */
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 1.5rem; /* mb-6 */
+    line-height: 1.2;      /* leading-tight */
+}
+
+@media (min-width: 768px) { /* md:text-7xl */
+    .hero-title {
+        font-size: 4.5rem;
+    }
+}
+
+.hero-subtitle-animated {
+    display: block;
+    background-image: linear-gradient(to right, #60a5fa, #a78bfa, #22d3ee); /* from-blue-400 via-purple-400 to-cyan-400 */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+    50% { opacity: .7; }
+}
+
+.hero-description {
+    font-size: 1.25rem; /* text-xl */
+    color: #d1d5db;   /* text-gray-300 */
+    margin-bottom: 2rem; /* mb-8 */
+    max-width: 64rem;   /* max-w-4xl */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width: 768px) { /* md:text-2xl */
+    .hero-description {
+        font-size: 1.5rem;
+    }
+}
+
+/* Carousel Section */
+.carousel-section {
+    padding-top: 2rem;    /* py-8 */
+    padding-bottom: 2rem; /* py-8 */
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 80rem; /* max-w-7xl */
+    margin: 0 auto;
+    /* overflow: hidden; // Removido temporariamente para ver se os botões estavam sendo cortados.
+                       // Se os botões estiverem posicionados dentro, o overflow:hidden no .carousel pode ser mantido.
+                       // Idealmente, o .carousel DEVE ter overflow:hidden para que os itens fora da view não apareçam. */
+    overflow: hidden;
+}
+
+.carousel-content {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    margin-left: -1rem; /* -ml-4 (compensa o pl-4 do item) */
+}
+
+.carousel-item {
+    min-width: 100%; /* basis-full */
+    padding-left: 1rem; /* pl-4 */
+    flex-shrink: 0;
+}
+
+@media (min-width: 768px) { /* md:basis-1/2 */
+    .carousel-item {
+        min-width: 50%;
+    }
+}
+@media (min-width: 1024px) { /* lg:basis-1/3 */
+    .carousel-item {
+        min-width: 33.333333%;
+    }
+}
+
+.card-group {
+    height: 100%;
+}
+
+.card {
+    height: 100%;
+    background-color: #1f2937;
     border: 1px solid #374151;
+    border-radius: 0.75rem;
+    transition: all 0.5s;
+    transform-origin: center;
+}
+
+.card-group:hover .card {
+    border-color: #4b5563;
+    transform: scale(1.05);
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.2), 0 10px 10px -5px rgba(0,0,0,0.1);
+}
+
+.card-content {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.card-icon-container {
+    padding: 1rem;
+    border-radius: 0.75rem;
+    color: white;
+    transition: transform 0.3s;
+}
+.card-group:hover .card-icon-container {
+    transform: scale(1.10);
+}
+.card-icon-container svg {
+    width: 3rem;
+    height: 3rem;
+    display: block;
+}
+.gradient-blue { background-image: linear-gradient(to bottom right, #2563eb, #1e40af); }
+.gradient-green { background-image: linear-gradient(to bottom right, #16a34a, #15803d); }
+.gradient-purple { background-image: linear-gradient(to bottom right, #9333ea, #7e22ce); }
+.gradient-orange { background-image: linear-gradient(to bottom right, #ea580c, #c2410c); }
+.gradient-red { background-image: linear-gradient(to bottom right, #dc2626, #b91c1c); }
+.gradient-cyan { background-image: linear-gradient(to bottom right, #0891b2, #0e7490); }
+
+.badge {
+    background-color: #374151;
+    color: #e5e7eb;
+    border: 1px solid #4b5563;
+    padding: 0.25rem 0.75rem;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+}
+
+.card-image-container {
+    position: relative;
+    height: 12rem;
+    margin-bottom: 1.5rem;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    background-image: linear-gradient(to bottom right, #374151, #1f2937);
+    transition: all 0.3s;
+}
+.card-group:hover .card-image-container {
+    background-image: linear-gradient(to bottom right, #4b5563, #374151);
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+}
+.card-group:hover .card-image {
+    opacity: 0.8;
+}
+
+.card-image-overlay {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(to top, rgba(17,24,39,0.8), transparent);
+}
+.card-image-progress-container {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+}
+.card-image-progress-bar {
+    width: 100%;
+    height: 0.25rem;
+    border-radius: 9999px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s;
+}
+.card-group:hover .card-image-progress-bar {
+    transform: scaleX(1);
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+    transition: color 0.3s;
+}
+.card-group:hover .card-title {
+    color: #60a5fa;
+}
+
+.card-description {
+    color: #d1d5db;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+    line-height: 1.6;
+}
+
+.info-cards-container {
+    margin-bottom: 1.5rem;
+}
+.info-card {
     display: flex;
     justify-content: space-between;
-    width: 100vw;
-    height: 9vh;
+    align-items: center;
+    padding: 0.75rem;
+    background-color: rgba(55, 65, 81, 0.5);
+    border-radius: 0.5rem;
+    border: 1px solid #4b5563;
+    margin-bottom: 0.75rem;
+}
+.info-card:last-child {
+    margin-bottom: 0;
 }
 
-a {
-    text-decoration: none;
+.info-label {
+    color: #9ca3af;
+    font-size: 0.875rem;
+}
+.info-value {
+    font-weight: 600;
     color: #ffffff;
 }
 
-.headerTitle {
-    margin-left: 1rem;
-    display: flex;
-    justify-content: center;
-    gap: .50rem;
-    align-items: center;
-    height: 100%;
-}
-
-.headerHome {
-    display: flex;
-    width: 20%;
-    height: 100%;
-    align-items: center;
-}
-
-
-
-.headerHome ul {
-    list-style: none;
-}
-
-.headerHome ul li a {
-    position: relative; 
-    padding-bottom: 5px; 
-
-}
-
-.headerHome ul li a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0; 
-    height: 2px;
-    background-color: #ffffff; 
-    transition: width 0.3s ease; 
-}
-
-.headerHome ul li a:hover::after {
+.card-button-link {
+    display: block;
+    text-decoration: none;
     width: 100%;
+}
+.card-button {
+    width: 100%;
+    color: white;
+    font-weight: 600;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    border: none;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.card-button:hover {
+    box-shadow: 0 4px 10px rgba(59, 130, 246, 0.25);
+    transform: scale(1.05);
+}
+
+/* === SEÇÃO DO CARROSSEL ALTERADA === */
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    /* Fundo com bom contraste, ajustado para ser mais sólido */
+    background-color: rgba(31, 41, 55, 0.85); /* Ex: bg-gray-800 com 85% de opacidade */
+    border: 1px solid rgba(75, 85, 99, 0.6);  /* Ex: border-gray-600 com 60% de opacidade */
+    color: white;
+    /* Padding ajustado para uma boa área de clique sem aumentar demais o botão */
+    padding: 0.875rem; /* 14px de padding */
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10; /* Garante que fique sobre os itens do carrossel */
+    transition: background-color 0.3s, opacity 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3); /* Sombra sutil para destacar mais */
+}
+
+.carousel-button svg {
+    /* Tamanho do ícone SVG (seta) mantido em um tamanho padrão/menor */
+    width: 1.25rem;  /* 20px */
+    height: 1.25rem; /* 20px */
+    display: block;
+}
+
+.carousel-button:hover {
+    background-color: rgba(55, 65, 81, 0.95); /* Ex: bg-gray-700 com 95% de opacidade */
+}
+
+.carousel-button.prev {
+    /* Posiciona os botões NAS BORDAS INTERNAS do carrossel */
+    left: 1rem; /* 16px da borda esquerda do contêiner .carousel */
+}
+
+.carousel-button.next {
+    /* Posiciona os botões NAS BORDAS INTERNAS do carrossel */
+    right: 1rem; /* 16px da borda direita do contêiner .carousel */
+}
+
+/* As media queries para left/right são removidas pois o posicionamento de 1rem deve funcionar
+   consistentemente em diferentes tamanhos de tela, mantendo os botões dentro da área do carrossel.
+   Se precisar de ajustes finos para telas muito pequenas, podem ser adicionadas aqui. */
+
+.carousel-button:disabled {
+    opacity: 0.5; /* Mantém uma opacidade razoável para o estado desabilitado */
+    cursor: not-allowed;
+    background-color: rgba(43, 53, 68, 0.7); /* Cor de fundo para desabilitado, um pouco mais opaca */
+    box-shadow: none; /* Remove sombra no estado desabilitado */
+}
+/* === FIM DA SEÇÃO DO CARROSSEL ALTERADA === */
+
+
+/* Stats Section */
+.stats-section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+.stats-grid {
+    display: grid;
+    gap: 2rem;
+    text-align: center;
+}
+@media (min-width: 768px) {
+    .stats-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+.stat-item {
+    padding: 2rem;
+    background-color: #1f2937;
+    border-radius: 0.75rem;
+    border: 1px solid #374151;
+    transition: border-color 0.3s;
+}
+.stat-item:nth-child(1):hover { border-color: #60a5fa; }
+.stat-item:nth-child(2):hover { border-color: #34d399; }
+.stat-item:nth-child(3):hover { border-color: #a78bfa; }
+
+.stat-number {
+    font-size: 2.25rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+.text-blue-400 { color: #60a5fa; }
+.text-green-400 { color: #34d399; }
+.text-purple-400 { color: #a78bfa; }
+
+.stat-label {
+    color: #d1d5db;
+}
+
+/* CTA Section */
+.cta-section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    background-image: linear-gradient(to right, #1e3a8a, #581c87, #0e7490);
+}
+.cta-content {
+    text-align: center;
+}
+.cta-title {
+    font-size: 2.25rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+}
+.cta-description {
+    font-size: 1.25rem;
+    color: #e5e7eb;
+    margin-bottom: 2rem;
+    max-width: 48rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+.cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+}
+@media (min-width: 640px) {
+    .cta-buttons {
+        flex-direction: row;
+    }
+}
+
+.button {
+    padding: 1rem 2rem;
+    font-weight: 600;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    font-size: 1rem;
+}
+.primary-button {
+    background-color: #ffffff;
+    color: #111827;
+    border: 1px solid #ffffff;
+}
+.primary-button:hover {
+    background-color: #f3f4f6;
+}
+.secondary-button {
+    background-color: transparent;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+}
+.secondary-button:hover {
+    background-color: #ffffff;
+    color: #111827;
+}
+
+/* Footer */
+.footer {
+    background-color: #1f2937;
+    border-top: 1px solid #374151;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+.footer-content {
+    text-align: center;
+}
+.footer-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+.footer-logo svg.icon-blue {
+    stroke: #60a5fa;
+    margin-right: 0.5rem;
+}
+.footer-logo-text {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+.footer-text {
+    color: #9ca3af;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
 }
