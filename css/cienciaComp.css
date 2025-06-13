@@ -1,8 +1,6 @@
-
-
-
-
-
+/* -------------------------
+   GERAL
+------------------------- */
 body {
   background-color: #111827;
   color: #ffffff;
@@ -17,6 +15,9 @@ body {
   padding: 1rem;
 }
 
+/* -------------------------
+   HEADER
+------------------------- */
 .header {
   background-color: #1f2937;
   padding: 1rem 0;
@@ -28,6 +29,9 @@ body {
   font-weight: bold;
 }
 
+/* -------------------------
+   HERO / BADGES
+------------------------- */
 .curso-hero {
   margin-bottom: 2rem;
 }
@@ -43,14 +47,32 @@ body {
   background-color: #4a5568;
   border-radius: 0.25rem;
   font-size: 0.875rem;
+  transition: background-color 0.3s, transform 0.2s;
+  cursor: pointer;
 }
 
+.badge:hover {
+  background-color: #2d3748;
+  transform: scale(1.05);
+}
+
+/* -------------------------
+   GRID E SIDEBAR
+------------------------- */
 .grid {
   display: grid;
   grid-template-columns: 3fr 1fr;
   gap: 2rem;
 }
 
+.sidebar {
+  display: flex;
+  flex-direction: column;
+}
+
+/* -------------------------
+   CARDS
+------------------------- */
 .card {
   background-color: #1f2937;
   padding: 1rem;
@@ -72,6 +94,50 @@ body {
   padding-left: 1.5rem;
 }
 
+.card ul li::marker {
+  color: #63b3ed; /* azul nas bolinhas da lista */
+}
+
+/* -------------------------
+   LISTA VERDE (Materias)
+------------------------- */
+#curso-materias li::marker {
+  color: #48bb78; /* verde */
+}
+
+
+
+/* -------------------------
+   LISTA EM GRID (com bolinha verde)
+------------------------- */
+.materias-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.materias-grid li {
+  background-color: #2d3748;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #e2e8f0;
+  font-weight: 500;
+}
+
+.materias-grid li::before {
+  content: "●";
+  color: #48bb78;
+  font-size: 0.8rem;
+}
+
+/* -------------------------
+   BOTÕES
+------------------------- */
 .btn {
   display: inline-block;
   margin-top: 1rem;
@@ -93,12 +159,9 @@ body {
   color: #3182ce;
 }
 
-.sidebar {
-  display: flex;
-  flex-direction: column;
-}
-
+/* -------------------------
+   CTA
+------------------------- */
 .cta {
   text-align: center;
 }
-

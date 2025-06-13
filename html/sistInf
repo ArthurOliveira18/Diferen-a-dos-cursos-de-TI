@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Curso - Detalhes</title>
+    <link rel="stylesheet" href="../css/cienciaComp.css">
+  </head>
+  <body class="bg-gray-900 text-white">
+    <header class="header">
+      <div class="container">
+        <a href="/" class="back-link">
+          <span>&larr;</span> Voltar para Home
+        </a>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="curso-hero">
+        <h1 id="curso-nome">Sistemas de Informação</h1>
+        <p id="curso-descricao">Combina conhecimentos de tecnologia com gestão empresarial, formando profissionais que fazem a ponte entre TI e negócios.</p>
+        <div class="badges">
+          <span class="badge badge-duracao" id="curso-duracao">4 anos</span>
+          <span class="badge badge-nivel" id="curso-nivel">Bacharelado</span>
+          <span class="badge badge-foco" id="curso-foco">Negócios e TI</span>
+        </div>
+      </section>
+
+      <div class="grid">
+        <section class="conteudo-principal">
+          <article class="card">
+            <h2>Sobre o Curso</h2>
+            <h3>Objetivo</h3>
+            <p id="curso-objetivo">Formar profissionais capazes de alinhar a tecnologia da informação com os objetivos estratégicos das organizações.</p>
+            <h3>Perfil do Estudante</h3>
+            <p id="curso-perfil">Ideal para quem quer trabalhar na intersecção entre tecnologia e negócios, com visão estratégica e gerencial.</p>
+          </article>
+
+          <article class="card">
+            <h2>Principais Diferenciais</h2>
+             <ul id="curso-diferenciais">
+                <li>Visão de negócios</li>
+                <li>Gestão de TI</li>
+                <li>Análise de processos</li>
+                <li>Consultoria empresarial</li>
+                <li>Transformação digital</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h2>Principais Matérias</h2>
+            <ul class="materias-grid">
+                <li>Administração</li>
+                <li>Gestão de Projetos</li>
+                <li>Business Intelligence</li>
+                <li>Governança de TI</li>
+                <li>CRM e ERP</li>
+                <li>Contabilidade</li>
+                <li>Sistemas de Informação Gerencial</li>
+                <li>Análise de Processos</li>
+                <li>E-commerce</li>
+                <li>Auditoria de Sistemas</li>
+            </ul>
+          </article>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
