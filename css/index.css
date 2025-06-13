@@ -198,12 +198,7 @@ body {
     margin-bottom: 1.5rem;
 }
 
-.card-icon-container {
-    padding: 1rem;
-    border-radius: 0.75rem;
-    color: white;
-    transition: transform 0.3s;
-}
+
 .card-group:hover .card-icon-container {
     transform: scale(1.10);
 }

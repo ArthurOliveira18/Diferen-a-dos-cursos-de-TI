@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Array de cursos com os caminhos das imagens atualizados
     const cursos = [
         {
             id: "ciencia-computacao",
@@ -7,9 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
             nivel: "Bacharelado",
             foco: "Teoria e Fundamentos",
             descricao: "Curso mais teórico e abrangente, focado em algoritmos, matemática e pesquisa científica.",
-            iconSVG: `<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.72A6.5 6.5 0 0 0 12 8.5a6.5 6.5 0 0 0-9.42 2.22"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/><path d="m22 10.5-10-6-10 6"/><path d="M6 18v2c0 .55.45 1 1 1h10c.55 0 1-.45 1-1v-2"/></svg>`,
+           
             gradientClass: "gradient-blue",
-            imagePlaceholder: "https://via.placeholder.com/400x192/2563EB/FFFFFF?text=Computacao"
+            imagePlaceholder: "../img/Ciencia-da-Computacao.jpg" // Alterado
         },
         {
             id: "engenharia-software",
@@ -18,9 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
             nivel: "Bacharelado",
             foco: "Desenvolvimento e Gestão",
             descricao: "Focado no desenvolvimento de software em larga escala e gestão de projetos.",
-            iconSVG: `<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/><line x1="14.5" y1="16.5" x2="9.5" y2="7.5" opacity="0.4"/><line x1="3" y1="12" x2="21" y2="12" opacity="0.2"/></svg>`,
             gradientClass: "gradient-green",
-            imagePlaceholder: "https://via.placeholder.com/400x192/16A34A/FFFFFF?text=Eng.+Software"
+            imagePlaceholder: "../img/eng-software-curso.webp" // Alterado
         },
         {
             id: "analise-desenvolvimento",
@@ -29,9 +29,8 @@ document.addEventListener('DOMContentLoaded', () => {
             nivel: "Tecnólogo",
             foco: "Desenvolvimento Prático",
             descricao: "Curso prático e direto, focado no desenvolvimento de aplicações e sistemas.",
-            iconSVG: `<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>`,
             gradientClass: "gradient-purple",
-            imagePlaceholder: "https://via.placeholder.com/400x192/9333EA/FFFFFF?text=ADS"
+            imagePlaceholder: "../img/ADS.jpg" // Alterado
         },
         {
             id: "sistemas-informacao",
@@ -40,9 +39,8 @@ document.addEventListener('DOMContentLoaded', () => {
             nivel: "Bacharelado",
             foco: "Negócios e TI",
             descricao: "Combina tecnologia com gestão empresarial e análise de negócios.",
-            iconSVG: `<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>`,
             gradientClass: "gradient-orange",
-            imagePlaceholder: "https://via.placeholder.com/400x192/EA580C/FFFFFF?text=SI"
+            imagePlaceholder: "../img/sistema-de-informacao.webp" // Alterado
         },
         {
             id: "engenharia-computacao",
@@ -51,9 +49,8 @@ document.addEventListener('DOMContentLoaded', () => {
             nivel: "Bacharelado",
             foco: "Hardware e Software",
             descricao: "Integra conhecimentos de hardware, software e eletrônica.",
-            iconSVG: `<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>`,
             gradientClass: "gradient-red",
-            imagePlaceholder: "https://via.placeholder.com/400x192/DC2626/FFFFFF?text=Eng.+Comp."
+            imagePlaceholder: "../img/Engenharia-da-computacao.jpg" // Alterado
         },
         {
             id: "redes-computadores",
@@ -62,9 +59,8 @@ document.addEventListener('DOMContentLoaded', () => {
             nivel: "Tecnólogo",
             foco: "Infraestrutura",
             descricao: "Especializado em redes, segurança e infraestrutura de TI.",
-            iconSVG: `<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
             gradientClass: "gradient-cyan",
-            imagePlaceholder: "https://via.placeholder.com/400x192/0891B2/FFFFFF?text=Redes"
+            imagePlaceholder: "../img/rede-computadores.avif" // Alterado
         },
     ];
 
@@ -72,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const prevButton = document.getElementById('carouselPrev');
     const nextButton = document.getElementById('carouselNext');
 
-    let carouselItemsElements = []; // Renomeado para evitar conflito com 'items' da função
+    let carouselItemsElements = []; 
     let totalItems = 0;
     let itemsPerView = 3;
     let currentIndex = 0;
@@ -86,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="card-content">
                             <div class="card-header">
                                 <div class="card-icon-container ${curso.gradientClass}">
-                                    ${curso.iconSVG}
+
                                 </div>
                                 <span class="badge">${curso.nivel}</span>
                             </div>
@@ -130,19 +126,15 @@ document.addEventListener('DOMContentLoaded', () => {
         let transformValue;
 
         if (totalItems <= itemsPerView) {
-            // Se todos os itens cabem na visualização (ou menos)
             transformValue = 0;
         } else if (currentIndex >= (totalItems - itemsPerView)) {
-            // Se estamos na última "página" de itens
-            // Calcula o deslocamento exato para alinhar o final do conteúdo
-            const carouselContainer = carouselContent.parentElement; // o .carousel
-            const scrollableWidth = carouselContent.scrollWidth;   // Largura total de todos os itens
-            const viewportWidth = carouselContainer.clientWidth;   // Largura visível do carrossel
+            const carouselContainer = carouselContent.parentElement; 
+            const scrollableWidth = carouselContent.scrollWidth;   
+            const viewportWidth = carouselContainer.clientWidth;   
 
             const maxTranslateX = scrollableWidth - viewportWidth;
-            transformValue = -Math.max(0, maxTranslateX); // Garante que não seja positivo
+            transformValue = -Math.max(0, maxTranslateX);
         } else {
-            // Navegação normal para páginas intermediárias
             transformValue = -currentIndex * itemWidth;
         }
         carouselContent.style.transform = `translateX(${transformValue}px)`;
@@ -154,9 +146,6 @@ document.addEventListener('DOMContentLoaded', () => {
             nextButton.disabled = true;
         } else {
             prevButton.disabled = currentIndex <= 0;
-            // O botão "next" é desabilitado se currentIndex atingiu o ponto
-            // onde a próxima ação o levaria para a "última página" ou já está nela.
-            // A lógica em applyCarouselTransform já cuida do alinhamento exato.
             nextButton.disabled = currentIndex >= (totalItems - itemsPerView);
         }
     }
@@ -167,7 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (totalItems === 0) {
             itemWidth = 0;
-            itemsPerView = 1; // Valor padrão
+            itemsPerView = 1; 
             currentIndex = 0;
         } else {
             const screenWidth = window.innerWidth;
@@ -179,15 +168,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 itemsPerView = 3;
             }
             itemWidth = carouselItemsElements[0].offsetWidth;
-
-            // Ajusta o currentIndex se ele se tornou inválido devido à mudança de itemsPerView
-            // Esta linha garante que, mesmo se currentIndex for muito alto, a lógica
-            // em applyCarouselTransform para a última página será acionada corretamente.
-            // Não é estritamente necessário "clampar" aqui se applyCarouselTransform já lida com isso.
-            // currentIndex = Math.max(0, Math.min(currentIndex, totalItems - itemsPerView));
         }
-        applyCarouselTransform(); // Aplica a transformação inicial/ajustada
-        updateButtonStates();     // Define o estado inicial dos botões
+        applyCarouselTransform(); 
+        updateButtonStates();     
     }
 
 
@@ -200,8 +183,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     nextButton.addEventListener('click', () => {
-        // Permite avançar até que currentIndex seja tal que a próxima exibição
-        // seja a dos últimos itemsPerView itens.
         if (currentIndex < (totalItems - itemsPerView)) {
             currentIndex++;
             applyCarouselTransform();
@@ -210,7 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     window.addEventListener('resize', () => {
-        initializeCarousel(); // Re-calcula tudo em caso de redimensionamento
+        initializeCarousel(); 
     });
 
     // Gerar os cards dos cursos
