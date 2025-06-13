@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Curso - Detalhes</title>
+    <link rel="stylesheet" href="../css/cienciaComp.css">
+  </head>
+  <body class="bg-gray-900 text-white">
+    <header class="header">
+      <div class="container">
+        <a href="/" class="back-link">
+          <span>&larr;</span> Voltar para Home
+        </a>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="curso-hero">
+        <h1 id="curso-nome">Engenharia de Software</h1>
+        <p id="curso-descricao">Focado especificamente no desenvolvimento de software em larga escala, metodologias ágeis e gestão de projetos de TI.</p>
+        <div class="badges">
+          <span class="badge badge-duracao" id="curso-duracao">4-5 anos</span>
+          <span class="badge badge-nivel" id="curso-nivel">Bacharelado</span>
+          <span class="badge badge-foco" id="curso-foco">desenvolvimento e Gestão</span>
+        </div>
+      </section>
+
+      <div class="grid">
+        <section class="conteudo-principal">
+          <article class="card">
+            <h2>Sobre o Curso</h2>
+            <h3>Objetivo</h3>
+            <p id="curso-objetivo">Formar engenheiros especializados no desenvolvimento de software complexo, com foco em qualidade, metodologias e gestão de projetos.</p>
+            <h3>Perfil do Estudante</h3>
+            <p id="curso-perfil">Ideal para quem quer se especializar em desenvolvimento de software, trabalhar em equipes grandes e liderar projetos tecnológicos.</p>
+          </article>
+
+          <article class="card">
+            <h2>Principais Diferenciais</h2>
+             <ul id="curso-diferenciais">
+                <li>Foco específico em software</li>
+                <li>Metodologias ágeis e DevOps/li>
+                <li>Gestão de projetos de TI</li>
+                <li>Qualidade de software</li>
+                <li>Arquitetura de sistemas</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h2>Principais Matérias</h2>
+            <ul id="curso-materias">
+                <li>Engenharia de Requisitos</li>
+                <li>Metodologias Ágeis</li>
+                <li>Testes de Software</li>
+                <li>Padrões de Design</li>
+                <li>Mobile Development</li>
+                <li>Arquitetura de Software</li>
+                <li>DevOps e CI/CD</li>
+                <li>Gestão de Projetos</li>
+                <li>Desenvolvimento Web</li>
+                <li>Cloud Computing</li>
+            </ul>
+          </article>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
