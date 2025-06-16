@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Array de cursos com os caminhos das imagens atualizados
+    // Array de cursos com a nova propriedade 'paginaURL'
     const cursos = [
         {
             id: "ciencia-computacao",
@@ -8,9 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
             nivel: "Bacharelado",
             foco: "Teoria e Fundamentos",
             descricao: "Curso mais teórico e abrangente, focado em algoritmos, matemática e pesquisa científica.",
-           
             gradientClass: "gradient-blue",
-            imagePlaceholder: "../img/Ciencia-da-Computacao.jpg" // Alterado
+            imagePlaceholder: "../img/Ciencia-da-Computacao.jpg",
+            paginaURL: "cienciaComp.html" // CORRIGIDO
         },
         {
             id: "engenharia-software",
@@ -20,7 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
             foco: "Desenvolvimento e Gestão",
             descricao: "Focado no desenvolvimento de software em larga escala e gestão de projetos.",
             gradientClass: "gradient-green",
-            imagePlaceholder: "../img/eng-software-curso.webp" // Alterado
+            imagePlaceholder: "../img/eng-software-curso.webp",
+            paginaURL: "engSoft.html" // CORRIGIDO
         },
         {
             id: "analise-desenvolvimento",
@@ -30,7 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
             foco: "Desenvolvimento Prático",
             descricao: "Curso prático e direto, focado no desenvolvimento de aplicações e sistemas.",
             gradientClass: "gradient-purple",
-            imagePlaceholder: "../img/ADS.jpg" // Alterado
+            imagePlaceholder: "../img/ADS.jpg",
+            paginaURL: "ads.html" // CORRIGIDO
         },
         {
             id: "sistemas-informacao",
@@ -40,7 +42,11 @@ document.addEventListener('DOMContentLoaded', () => {
             foco: "Negócios e TI",
             descricao: "Combina tecnologia com gestão empresarial e análise de negócios.",
             gradientClass: "gradient-orange",
-            imagePlaceholder: "../img/sistema-de-informacao.webp" // Alterado
+            imagePlaceholder: "../img/sistema-de-informacao.webp",
+            // ATENÇÃO: Na imagem, 'sistInf' parece uma pasta. 
+            // Se o arquivo for index.html dentro dela, o caminho seria "sistInf/index.html".
+            // Estou assumindo que é um arquivo .html na raiz da pasta 'html'.
+            paginaURL: "sistInf.html" // CORRIGIDO (VERIFIQUE ESTE CAMINHO)
         },
         {
             id: "engenharia-computacao",
@@ -50,7 +56,8 @@ document.addEventListener('DOMContentLoaded', () => {
             foco: "Hardware e Software",
             descricao: "Integra conhecimentos de hardware, software e eletrônica.",
             gradientClass: "gradient-red",
-            imagePlaceholder: "../img/Engenharia-da-computacao.jpg" // Alterado
+            imagePlaceholder: "../img/Engenharia-da-computacao.jpg",
+            paginaURL: "engComp.html" // CORRIGIDO
         },
         {
             id: "redes-computadores",
@@ -60,7 +67,8 @@ document.addEventListener('DOMContentLoaded', () => {
             foco: "Infraestrutura",
             descricao: "Especializado em redes, segurança e infraestrutura de TI.",
             gradientClass: "gradient-cyan",
-            imagePlaceholder: "../img/rede-computadores.avif" // Alterado
+            imagePlaceholder: "../img/rede-computadores.avif",
+            paginaURL: "redesComp.html" // CORRIGIDO
         },
     ];
 
@@ -68,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const prevButton = document.getElementById('carouselPrev');
     const nextButton = document.getElementById('carouselNext');
 
-    let carouselItemsElements = []; 
+    let carouselItemsElements = [];
     let totalItems = 0;
     let itemsPerView = 3;
     let currentIndex = 0;
@@ -82,7 +90,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="card-content">
                             <div class="card-header">
                                 <div class="card-icon-container ${curso.gradientClass}">
-
                                 </div>
                                 <span class="badge">${curso.nivel}</span>
                             </div>
@@ -105,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                     <span class="info-value">${curso.foco}</span>
                                 </div>
                             </div>
-                            <a href="/curso/${curso.id}" class="card-button-link">
+                            <a href="${curso.paginaURL}" class="card-button-link">
                                 <button class="card-button ${curso.gradientClass}">
                                     Explorar Curso
                                 </button>
@@ -128,9 +135,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (totalItems <= itemsPerView) {
             transformValue = 0;
         } else if (currentIndex >= (totalItems - itemsPerView)) {
-            const carouselContainer = carouselContent.parentElement; 
-            const scrollableWidth = carouselContent.scrollWidth;   
-            const viewportWidth = carouselContainer.clientWidth;   
+            const carouselContainer = carouselContent.parentElement;
+            const scrollableWidth = carouselContent.scrollWidth;
+            const viewportWidth = carouselContainer.clientWidth;
 
             const maxTranslateX = scrollableWidth - viewportWidth;
             transformValue = -Math.max(0, maxTranslateX);
@@ -156,7 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (totalItems === 0) {
             itemWidth = 0;
-            itemsPerView = 1; 
+            itemsPerView = 1;
             currentIndex = 0;
         } else {
             const screenWidth = window.innerWidth;
@@ -169,8 +176,8 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             itemWidth = carouselItemsElements[0].offsetWidth;
         }
-        applyCarouselTransform(); 
-        updateButtonStates();     
+        applyCarouselTransform();
+        updateButtonStates();
     }
 
 
@@ -191,7 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     window.addEventListener('resize', () => {
-        initializeCarousel(); 
+        initializeCarousel();
     });
 
     // Gerar os cards dos cursos
